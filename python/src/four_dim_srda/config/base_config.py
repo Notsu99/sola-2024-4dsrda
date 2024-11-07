@@ -4,6 +4,7 @@ import json
 import pathlib
 
 import yaml
+from src.qg_model.utils.config import EslerJetConfig, JetConfig
 
 
 @dataclasses.dataclass
@@ -40,6 +41,13 @@ class YamlConfig:
                     data[key] = pathlib.Path(val)
                 if inspect.isclass(child_class) and issubclass(child_class, YamlConfig):
                     data[key] = child_class(**convert_from_dict(child_class, val))
+                # JetConfigを継承するクラス
+                elif inspect.isclass(child_class) and issubclass(child_class, JetConfig):
+                    # EslerJetConfig の場合も対応
+                    if 'width_z' in val:
+                        data[key] = EslerJetConfig(**convert_from_dict(EslerJetConfig, val))
+                    else:
+                        data[key] = JetConfig(**convert_from_dict(JetConfig, val))
             return data
 
         with open(config_path) as f:
@@ -47,27 +55,3 @@ class YamlConfig:
             # recursively convert config item to YamlConfig
             config_data = convert_from_dict(cls, config_data)
             return cls(**config_data)
-
-
-@dataclasses.dataclass
-class TrainConfig(YamlConfig):
-    early_stopping_patience: int
-    num_epochs: int
-    lr: float
-    seed: int
-    use_zero: bool
-
-
-@dataclasses.dataclass
-class LossConfig(YamlConfig):
-    name: str
-
-
-@dataclasses.dataclass
-class BaseExperimentConfig(YamlConfig):
-    model_name: str
-    model_config: YamlConfig
-    dataset_config: YamlConfig
-    dataloader_config: YamlConfig
-    train_config: TrainConfig
-    loss_config: LossConfig
