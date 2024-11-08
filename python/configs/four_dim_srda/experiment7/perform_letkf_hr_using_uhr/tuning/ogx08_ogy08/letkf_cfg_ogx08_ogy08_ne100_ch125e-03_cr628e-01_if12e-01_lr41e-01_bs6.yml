@@ -1,0 +1,19 @@
+block_size: 6
+cylinder_height: 0.125
+cylinder_radius: 62.83185307179586
+data_dir: experiment7/cfd_simulation/qg_model/hr_pv
+inflation_factor: 1.2
+localization_radius: 4.1
+num_ens: 100
+num_simulation: 1
+nx: 128
+ny: 65
+nz: 16
+obs_grid_interval_x: 8
+obs_grid_interval_y: 8
+obs_noise_std: 0.022
+train_valid_test_kinds: train
+train_valid_test_ratios:
+- 0.7
+- 0.2
+- 0.1

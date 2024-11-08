@@ -1,0 +1,77 @@
+da_config:
+  assimilation_dt: 1.0
+  assimilation_interval: 4
+  forecast_span: 4
+  segment_length: 9
+hr_base_config:
+  Lx: 6.283185307179586
+  Ly: 3.141592653589793
+  Lz: 0.0125
+  beta: 0.256
+  device: cuda
+  diffusion_coefficient: 9.641044626467367e-06
+  diffusion_exponent: 2
+  f_0: 2.0
+  jet_max_velocity: 1.0
+  jet_width: 0.4
+  n_batch: 100
+  noise_amplitude: 0.003
+  nx: 128
+  ny: 65
+  nz: 16
+  precision: double
+  reduced_gravity: 31.25
+  width_z: 0.0015625
+jet_profile: sech_squared_and_sigmoid
+lr_base_config:
+  Lx: 6.283185307179586
+  Ly: 3.141592653589793
+  Lz: 0.0125
+  beta: 0.256
+  device: cuda
+  diffusion_coefficient: 9.641044626467367e-06
+  diffusion_exponent: 2
+  f_0: 2.0
+  jet_max_velocity: 1.0
+  jet_width: 0.4
+  n_batch: 20
+  noise_amplitude: 0.03
+  nx: 32
+  ny: 17
+  nz: 4
+  precision: double
+  reduced_gravity: 125.0
+  width_z: 0.0015625
+seed_config:
+  seed_end: 10
+  seed_start: 0
+  uhr_seed_end: 9999
+  uhr_seed_start: 9998
+time_config:
+  end_time: 200
+  hr_dt: 0.0025
+  lr_dt: 0.01
+  output_hr_dt: 0.25
+  output_lr_dt: 1.0
+  output_uhr_dt: 0.25
+  start_time: 0
+  uhr_dt: 0.00125
+uhr_base_config:
+  Lx: 6.283185307179586
+  Ly: 3.141592653589793
+  Lz: 0.0125
+  beta: 0.256
+  device: cuda
+  diffusion_coefficient: 9.641044626467367e-06
+  diffusion_exponent: 2
+  f_0: 2.0
+  jet_max_velocity: 1.0
+  jet_width: 0.4
+  n_batch: 1
+  noise_amplitude: 0.03
+  nx: 256
+  ny: 129
+  nz: 32
+  precision: double
+  reduced_gravity: 15.625
+  width_z: 0.0015625

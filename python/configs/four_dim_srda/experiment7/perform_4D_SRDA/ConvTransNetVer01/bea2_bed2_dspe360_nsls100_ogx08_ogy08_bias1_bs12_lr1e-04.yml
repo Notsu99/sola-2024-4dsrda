@@ -1,0 +1,63 @@
+dataloader_config:
+  batch_size: 12
+  data_dir_name: experiment7/cfd_simulation/qg_model/hr_and_lr_pv
+  dataset_name: DatasetMakingObs
+  num_workers: 2
+  seed: 42
+  train_valid_test_ratios:
+  - 0.7
+  - 0.2
+  - 0.1
+dataset_config:
+  beta_dist_alpha: 2.0
+  beta_dist_beta: 2.0
+  data_dirs: []
+  data_size_per_epoch: 360
+  is_future_obs_missing: true
+  lr_and_obs_time_interval: 4
+  max_ensemble_number: 20
+  max_start_time_index: 792
+  missing_value: 0.0
+  num_searched_lr_states: 100
+  nx_hr: 128
+  ny_hr: 65
+  nz_hr: 16
+  obs_grid_interval_x: 8
+  obs_grid_interval_y: 8
+  obs_noise_std: 0.022
+  pv_max: 2.92
+  pv_min: -2.88
+  use_ground_truth_clipping: null
+  use_mixup: true
+  use_observation: true
+loss_config:
+  name: L1
+model_config:
+  bias: true
+  feat_channels_0: 64
+  feat_channels_1: 128
+  feat_channels_2: 256
+  feat_channels_3: 128
+  hr_sequence_length: 9
+  hr_x_size: 128
+  hr_y_size: 64
+  hr_z_size: 16
+  input_channels: 1
+  input_sequence_length: 3
+  latent_channels: 64
+  lr_x_size: 32
+  lr_y_size: 16
+  lr_z_size: 4
+  model_name: ConvTransNetVer01
+  num_layers_o_in_block: 2
+  num_layers_x_in_block: 2
+  num_multi_attention_heads: 16
+  num_transformer_blocks: 5
+  output_channels: 1
+  use_global_skip_connection: true
+train_config:
+  early_stopping_patience: 51
+  lr: 0.0001
+  num_epochs: 400
+  seed: 42
+  use_zero: true
