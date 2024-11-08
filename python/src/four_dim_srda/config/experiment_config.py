@@ -8,7 +8,6 @@ from src.qg_model.utils.config import JetConfig
 
 # Neural Network
 
-
 @dataclasses.dataclass
 class TrainConfig(YamlConfig):
     early_stopping_patience: int
@@ -33,7 +32,6 @@ class BaseExperimentConfig(YamlConfig):
 
 
 # CFD
-
 
 @dataclasses.dataclass
 class CFDTimeConfig(YamlConfig):

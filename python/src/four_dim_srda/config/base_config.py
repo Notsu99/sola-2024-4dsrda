@@ -41,9 +41,9 @@ class YamlConfig:
                     data[key] = pathlib.Path(val)
                 if inspect.isclass(child_class) and issubclass(child_class, YamlConfig):
                     data[key] = child_class(**convert_from_dict(child_class, val))
-                # JetConfigを継承するクラス
+                # Classes inheriting from JetConfig
                 elif inspect.isclass(child_class) and issubclass(child_class, JetConfig):
-                    # EslerJetConfig の場合も対応
+                    # Support for EslerJetConfig as well
                     if 'width_z' in val:
                         data[key] = EslerJetConfig(**convert_from_dict(EslerJetConfig, val))
                     else:
@@ -52,6 +52,6 @@ class YamlConfig:
 
         with open(config_path) as f:
             config_data = yaml.full_load(f)
-            # recursively convert config item to YamlConfig
+            # Recursively convert config item to YamlConfig
             config_data = convert_from_dict(cls, config_data)
             return cls(**config_data)
