@@ -237,8 +237,8 @@ if __name__ == "__main__":
 
         model_data_path = f"{ROOT_DIR}/data/four_dim_srda/{experiment_name}/training/{model_name}/{config_name}"
         log_dir_path = f"{ROOT_DIR}/python/logs/four_dim_srda/{experiment_name}/training/{model_name}/{config_name}"
-        os.makedirs(model_data_path, exist_ok=True)  # 後でFalseに変更
-        os.makedirs(log_dir_path, exist_ok=True)  # 後でFalseに変更
+        os.makedirs(model_data_path, exist_ok=True)
+        os.makedirs(log_dir_path, exist_ok=True)
 
         logger.addHandler(FileHandler(f"{log_dir_path}/log.txt"))
 

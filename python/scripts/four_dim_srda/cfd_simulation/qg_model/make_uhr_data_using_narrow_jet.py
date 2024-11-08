@@ -73,7 +73,6 @@ if __name__ == "__main__":
         os.makedirs(result_dir, exist_ok=False)
         os.makedirs(log_dir, exist_ok=False)
 
-        # logger.addHandler(FileHandler(f"{log_dir}/log.txt", mode='w'))
         logger.addHandler(FileHandler(f"{log_dir}/log.txt"))
 
         logger.info("\n*********************************************************")

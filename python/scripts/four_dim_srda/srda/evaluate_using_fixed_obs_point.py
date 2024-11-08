@@ -105,7 +105,6 @@ if __name__ == "__main__":
         )
         FORECAST_SPAN = cfg_cfd.da_config.forecast_span
 
-        # 対象とする時間は0 <= t <= (NUM_TIMES - 1) * cfg_cfd.time_config.output_hr_dt
         NUM_TIMES = (
             cfg_srda.dataset_config.max_start_time_index
             + ASSIMILATION_PERIOD
