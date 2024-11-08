@@ -1,0 +1,72 @@
+dataloader_config:
+  batch_size: 12
+  data_dir_name: experiment7/cfd_simulation/qg_model/hr_and_lr_pv
+  dataset_name: DatasetMakingObs
+  num_workers: 2
+  seed: 42
+  train_valid_test_ratios:
+  - 0.7
+  - 0.2
+  - 0.1
+dataset_config:
+  beta_dist_alpha: 2.0
+  beta_dist_beta: 2.0
+  data_dirs: []
+  data_size_per_epoch: 360
+  is_future_obs_missing: true
+  lr_and_obs_time_interval: 4
+  max_ensemble_number: 20
+  max_start_time_index: 792
+  missing_value: 0.0
+  num_searched_lr_states: 100
+  nx_hr: 128
+  ny_hr: 65
+  nz_hr: 16
+  obs_grid_interval_x: 8
+  obs_grid_interval_y: 8
+  obs_noise_std: 0.022
+  pv_max: 2.92
+  pv_min: -2.88
+  use_ground_truth_clipping: null
+  use_mixup: true
+  use_observation: true
+loss_config:
+  name: L1
+model_config:
+  bias: false
+  decoder_activation_type: silu
+  decoder_norm_type: layer
+  dropout: 0.2
+  emb_dim: 512
+  encoder_activation_type: silu
+  encoder_norm_type: layer
+  encoder_output_channels: 128
+  feat_channels_0: 128
+  feat_channels_1: 128
+  feat_channels_2: 128
+  feat_channels_3: 128
+  hidden_dim: 1024
+  hr_sequence_length: 9
+  hr_x_size: 128
+  hr_y_size: 64
+  hr_z_size: 16
+  input_channels: 1
+  input_sequence_length: 3
+  lr_x_size: 32
+  lr_y_size: 16
+  lr_z_size: 4
+  model_name: UNetVitVer02
+  n_head: 8
+  num_3d_resnet_block: 3
+  num_vit_block: 4
+  other_activation_type: silu
+  other_norm_type: layer
+  patch_size_x: 1
+  patch_size_y: 1
+  use_vit_skip_connect: false
+train_config:
+  early_stopping_patience: 61
+  lr: 0.0001
+  num_epochs: 400
+  seed: 42
+  use_zero: true
