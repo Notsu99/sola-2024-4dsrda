@@ -20,7 +20,6 @@ This repository contains the source code used in *Four-Dimensional Super-Resolut
 2. Build Singularity containers:
     - `$ singularity build -f pytorch_es.sif ./singularity/pytorch_es/pytorch_es.def`
 3. Start singularity containers:
-    - The following command is for local environments
 
 ```sh
 $ singularity exec --nv --env PYTHONPATH="$(pwd)/python" \
