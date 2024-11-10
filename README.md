@@ -33,7 +33,7 @@ $ singularity exec --nv --env PYTHONPATH="$(pwd)/python" \
 ### Data Preparation
 
 - CFD Simulations
-  - Training data
+  - Training data (Run the following scripts in order)
     1. [Make HR target data](./python/bash/four_dim_srda/experiment7/cfd_simulation/qg_model/es/es_make_hr_training_data.sh)
     2. [Split HR target data](./python/bash/four_dim_srda/experiment7/cfd_simulation/qg_model/es/es_split_hr_training_data_in_parallel.sh)
     3. [Make LR input data](./python/bash/four_dim_srda/experiment7/cfd_simulation/qg_model/es/es_make_lr_training_data.sh)
@@ -54,5 +54,5 @@ $ singularity exec --nv --env PYTHONPATH="$(pwd)/python" \
   - [Test YO23](./python/bash/four_dim_srda/experiment7/DL_evaluate_on_es/ConvTransNetVer01/bea2_bed2_dspe360_nsls100_ogx08_ogy08_bias1_bs12_lr1e-04_using_narrow_jet.sh)
 - U-Net MaxViT
   - [Test U-Net MaxViT](./python/bash/four_dim_srda/experiment7/DL_evaluate_on_es/UNetMaxVitVer01/bea2_bed2_dspe360_nsls100_ogx08_ogy08_n3drb3_nmb6_bias0_bs12_lr1e-04_using_narrow_jet.sh)
-- HR-LETKF
-  - [Test HR-LETKF (run after completing U-Net MaxViT testing)](./python/bash/four_dim_srda/experiment7/letkf_simulation/perform_letkf_hr_using_uhr/es/use_narrow_jet/na3e-03_letkf_cfg_ogx08_ogy08_ne100_ch16e-04_cr6e+00_if12e-01_lr57e-01_bs6.sh)
+- HR-LETKF : LETKF using an HR fluid model
+  - [Test HR-LETKF (Run after completing U-Net MaxViT testing)](./python/bash/four_dim_srda/experiment7/letkf_simulation/perform_letkf_hr_using_uhr/es/use_narrow_jet/na3e-03_letkf_cfg_ogx08_ogy08_ne100_ch16e-04_cr6e+00_if12e-01_lr57e-01_bs6.sh)
