@@ -3,7 +3,7 @@
 This repository contains the source code used in *Four-Dimensional Super-Resolution Data Assimilation (4D-SRDA) for Prediction of Three-Dimensional Quasi-Geostrophic Flows*
 
 - [Setup](#setup)
-  - [Singularity Containers](#singularity-containers)
+  - [Singularity Container](#singularity-container)
 - [How to Perform Experiments](#how-to-perform-experiments)
   - [Data Preparation](#data-preparation)
   - [Training](#training)
@@ -11,15 +11,15 @@ This repository contains the source code used in *Four-Dimensional Super-Resolut
 
 ## Setup
 
-- The Singularity containers were used for experiments.
+- The Singularity container was used for experiments.
 - At least, 1 GPU board is required.
 
-### Singularity Containers
+### Singularity Container
 
 1. Install [Singularity](https://docs.sylabs.io/guides/3.0/user-guide/quick_start.html).
-2. Build Singularity containers:
+2. Build Singularity container:
     - `$ singularity build -f pytorch_es.sif ./singularity/pytorch_es/pytorch_es.def`
-3. Start singularity containers:
+3. Start singularity container:
 
 ```sh
 $ singularity exec --nv --env PYTHONPATH="$(pwd)/python" \
