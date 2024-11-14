@@ -6,7 +6,7 @@ From: nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04
     ./docker/pytorch_es/Pipfile.lock /workspace/
 
 %environment
-    export PATH=/workspace/.local/bin:$PATH
+    export PATH=$HOME/.local/bin:/workspace/.local/bin:/usr/local/bin:$PATH
     export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
     export PIP_NO_CACHE_DIR="off"
     export WORKON_HOME=/workspace/.venvs
@@ -14,7 +14,7 @@ From: nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04
 
 %post
     export DEBIAN_FRONTEND="noninteractive"
-    export PATH=/workspace/.local/bin:$PATH
+    export PATH=$HOME/.local/bin:/workspace/.local/bin:/usr/local/bin:$PATH
     export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
     export PIP_NO_CACHE_DIR="off"
     export WORKON_HOME=/workspace/.venvs
@@ -47,9 +47,9 @@ From: nvidia/cuda:11.3.1-cudnn8-devel-ubuntu20.04
 
     cd /workspace
     rm -rf ${HOME}/.cache/pip ${HOME}/.cache/pipenv
-    pip freeze > uninstall.txt \
-    pip uninstall -y -r uninstall.txt \
-    pip install -U pip==23.0.1 pipenv==2023.4.29
+    pip3 freeze > uninstall.txt
+    pip3 uninstall -y -r uninstall.txt
+    pip3 install -U pip==23.0.1 pipenv==2023.4.29
     cp /usr/lib/python3/dist-packages/apt_pkg.cpython-38-x86_64-linux-gnu.so /usr/lib/python3/dist-packages/apt_pkg.so
     apt-get purge -y python3-yaml
     pipenv install --system --dev --ignore-pipfile
