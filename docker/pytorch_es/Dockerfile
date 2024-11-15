@@ -44,12 +44,10 @@ COPY Pipfile Pipfile.lock ${HOME}/
 # https://stackoverflow.com/questions/13708180/python-dev-installation-error-importerror-no-module-named-apt-pkg/36232975#36232975
 RUN cd ${HOME} \
     && pip3 freeze > uninstall.txt \
-    && pip3 uninstall -y -r uninstall.txt \
-    && pip3 install -U pip==23.0.1 pipenv==2023.4.29 \
+    && pip3 uninstall -r uninstall.txt \
+    && pip3 install pip==23.0.1 pipenv==2023.4.29 \
     && export PATH="$PATH:${HOME}/.local/bin" \
     && cp /usr/lib/python3/dist-packages/apt_pkg.cpython-38-x86_64-linux-gnu.so /usr/lib/python3/dist-packages/apt_pkg.so \
     && apt-get purge -y python3-yaml \
     && pipenv install --system --dev --ignore-pipfile \
     && rm -rf ${HOME}/.cache/pip ${HOME}/.cache/pipenv
-
-COPY .jupyter/ ${HOME}/.jupyter/

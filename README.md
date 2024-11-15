@@ -12,6 +12,7 @@ This repository contains the source code used in *Four-Dimensional Super-Resolut
 ## Setup
 
 - The Singularity container was used in this research.
+  - The same environment is available through Docker.
 - At least, 1 GPU board is required.
 
 ### Singularity Container
