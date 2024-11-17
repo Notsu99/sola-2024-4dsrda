@@ -338,7 +338,7 @@ if __name__ == "__main__":
                     srda_forecast += srda[0][i_start:]
 
                     all_lr_forecast += lr_forecast[0][
-                        int(i_start / OUTPUT_SCALE_FACTOR) + 1 :
+                        i_start // OUTPUT_SCALE_FACTOR + 1 :
                     ]
 
                     logger.debug(f"Assimilation at i = {i_cycle}")
