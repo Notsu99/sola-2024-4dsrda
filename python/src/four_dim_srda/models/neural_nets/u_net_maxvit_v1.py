@@ -288,7 +288,7 @@ class UNetMaxVitVer01(nn.Module):
             else None,
         )
 
-        # ViT Encoder
+        # MaxViT
         self.latent_feature_extractor = MaxViTBlocks(
             # emd_sim is decided by input channels and nz in latent space
             emb_dim=self.cfg.encoder_output_channels * self.latent_3d_space_shape[0],
