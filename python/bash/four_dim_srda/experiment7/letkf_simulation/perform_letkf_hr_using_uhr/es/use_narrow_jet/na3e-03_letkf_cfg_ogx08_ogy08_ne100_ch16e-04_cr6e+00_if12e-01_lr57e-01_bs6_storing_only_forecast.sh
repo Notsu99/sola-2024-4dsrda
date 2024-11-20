@@ -5,7 +5,7 @@ ROOT_DIR=$(pwd)
 
 IMAGE_PATH=${ROOT_DIR}/pytorch_es.sif
 
-SCRIPT_PATH=${ROOT_DIR}/python/scripts/four_dim_srda/letkf/perform_letkf_hr_block_processing_using_uhr_and_fixed_obs_point_and_narrow_jet.py
+SCRIPT_PATH=${ROOT_DIR}/python/scripts/four_dim_srda/letkf/perform_letkf_hr_block_processing_using_uhr_and_fixed_obs_point_and_narrow_jet_storing_only_forecast.py
 
 EXPERIMENT_NAME=experiment7
 MODEL_NAME=UNetMaxVitVer01
