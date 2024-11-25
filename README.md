@@ -8,6 +8,7 @@ This repository contains the source code used in *Four-Dimensional Super-Resolut
   - [Data Preparation](#data-preparation)
   - [Training](#training)
   - [Testing](#testing)
+- [Evaluation](#evaluation)
 
 ## Setup
 
@@ -65,3 +66,13 @@ $ singularity exec --nv --env PYTHONPATH="$(pwd)/python" \
     - [Test U-Net MaxViT](./python/bash/four_dim_srda/experiment7/DL_evaluate_on_es/UNetMaxVitVer01/bea2_bed2_dspe360_nsls100_ogx08_ogy08_n3drb3_nmb6_bias0_bs12_lr1e-04_using_narrow_jet_storing_only_forecast.sh)
   - HR-LETKF : LETKF using an HR fluid model
     - [Test HR-LETKF (Run after completing U-Net MaxViT testing)](./python/bash/four_dim_srda/experiment7/letkf_simulation/perform_letkf_hr_using_uhr/es/use_narrow_jet/na3e-03_letkf_cfg_ogx08_ogy08_ne100_ch16e-04_cr6e%2B00_if12e-01_lr57e-01_bs6_storing_only_forecast.sh)
+
+## Evaluation
+
+- Calculation of MAE ratio and MSSIM loss
+  - [For analysis states](./python/notebooks/four_dim_srda/experiment7/calc_statistics_and_save_as_pickle_using_narrow_jet.ipynb)
+  - [For forecast states](./python/notebooks/four_dim_srda/experiment7/calc_statistics_and_save_as_pickle_using_narrow_jet_only_forecast.ipynb)
+- Visualization of Results
+  - [MAE ratio and MSSIM loss for analysis states](./python/notebooks/four_dim_srda/experiment7/plot_maer_and_mssim_loss_using_narrow_jet.ipynb)
+  - [MAE ratio and MSSIM loss for forecast states](./python/notebooks/four_dim_srda/experiment7/plot_maer_and_mssim_loss_storing_only_forecast_using_narrow_jet.ipynb)
+  - [Potential vorticity snapshots](./python/notebooks/four_dim_srda/experiment7/plot_result_snapshots_using_narrow_jet.ipynb)
