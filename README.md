@@ -1,5 +1,7 @@
 # sola-2024-4dsrda <!-- omit in toc -->
 
+[![DOI](https://zenodo.org/badge/884126349.svg)](https://doi.org/10.5281/zenodo.14213705)
+
 This repository contains the source code used in *Four-Dimensional Super-Resolution Data Assimilation (4D-SRDA) for Prediction of Three-Dimensional Quasi-Geostrophic Flows*
 
 - [Setup](#setup)
